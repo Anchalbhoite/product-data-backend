@@ -21,6 +21,9 @@ import { ScrapingService } from './scraping/scraping.service';
       database: process.env.DATABASE_NAME,
       autoLoadEntities: true,
       synchronize: true,
+      ssl: {
+      rejectUnauthorized: false, // needed for hosted DBs like Railway/Render
+  },
     }),
     NavigationModule, // 👈 here
     CategoryModule, ProductModule,
